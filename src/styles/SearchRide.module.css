@@ -1,0 +1,31 @@
+.container {
+      padding: 20px;
+    }
+    .title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .input {
+      margin: 10px;
+      padding: 10px;
+      width: 200px;
+    }
+    .button {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #2196f3;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .results {
+      margin-top: 20px;
+    }
+    .rideCard {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 6px;
+      background-color: #f9f9f9;
+    }

@@ -1,0 +1,33 @@
+.navbar {
+      background-color: #2c3e50;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      }
+      
+      .navLinks {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+      }
+      
+      .navLinks li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+      }
+      
+      .logoutBtn {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+      }
+      
+      .navLinks li a.active {
+            text-decoration: underline;
+      }
+      
