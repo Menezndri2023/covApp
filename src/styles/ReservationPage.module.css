@@ -1,0 +1,167 @@
+/* Container principal de la page */
+.pageContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f7f7f7;
+      padding: 20px;
+      position: relative;
+    }
+    
+    .backButton {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: none;
+      border: none;
+      font-size: 18px;
+      color: #007bff;
+      cursor: pointer;
+    }
+    
+    h1 {
+      font-size: 2rem;
+      color: #333;
+      margin-top: 60px; /* To make space for the back button */
+      margin-bottom: 20px;
+    }
+    
+    .sectionCards {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      width: 90%;
+
+      margin-top: 30px;
+    }
+    
+    .leftColumn{
+      width: 65%; /* Adjust width for the two columns */
+      height: 100%;
+      padding: 20px;
+      background-color: whitesmoke;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .rightColumn {
+      width: 30%; /* Adjust width for the two columns */
+      padding: 20px;
+      background-color: whitesmoke;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .leftColumn {
+      flex: 1;
+    }
+    
+    .rightColumn {
+      flex: 1;
+    }
+    
+    .sectionTitle {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    
+    .input,
+    .textarea,
+    .select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+    
+    .textarea {
+      min-height: 100px;
+    }
+    
+    .totalPrice {
+      font-size: 1.2rem;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    
+    .driverBlock {
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+    }
+    
+    .driverImage {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+    
+    .driverBlock p {
+      margin: 0;
+    }
+    
+    .checkbox {
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+    }
+    
+    .confirmBtn {
+      width: 100%;
+      padding: 15px;
+      background-color: #28a745;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    
+    .confirmBtn:hover {
+      background-color: #218838;
+    }
+    
+    .footer {
+      width: 100vw; /* Pleine largeur de la fenêtre */
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      position: relative;
+      left: 0;
+    }
+    
+    
+    /* Responsive (mobile) */
+    @media (max-width: 768px) {
+      .pageContainer {
+        padding: 1rem;
+      }
+    
+      .sectionTitle {
+        font-size: 1.25rem;
+      }
+    
+      .sectionCard {
+        padding: 1rem;
+      }
+    
+      .tripSummary {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    
+      .driverBlock {
+        margin-top: 1rem;
+        text-align: left;
+      }
+    
+      .confirmBtn {
+        font-size: 1rem;
+        padding: 0.75rem;
+      }
+    }
+    

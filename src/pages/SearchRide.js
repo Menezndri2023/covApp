@@ -1,53 +1,68 @@
 import React, { useState } from 'react';
-import styles from '../styles/SearchRide.module.css';
+import { useNavigate } from 'react-router-dom';
+import styles from '../styles/SearchRide.module.css'; // Pour wrapper général
+import tripStyles from '../styles/TripList.module.css'; // Pour style des trajets
+import Footer from './Footer';
+import TripCard from './TripCard';
 
 const SearchRide = () => {
-      const user = JSON.parse(localStorage.getItem('user'));
+  const navigate = useNavigate();
   const [filters, setFilters] = useState({ departure: '', destination: '' });
   const [results, setResults] = useState([]);
 
-      const handleChange = (e) => {
-      setFilters({ ...filters, [e.target.name]: e.target.value });
-      };
+  const handleChange = (e) => {
+    setFilters({ ...filters, [e.target.name]: e.target.value });
+  };
 
-      const handleSearch = () => {
-      const rides = JSON.parse(localStorage.getItem('rides') || '[]');
-      const filtered = rides.filter(
-            (ride) =>
-            ride.departure.toLowerCase().includes(filters.departure.toLowerCase()) &&
-            ride.destination.toLowerCase().includes(filters.destination.toLowerCase())
-      );
-      setResults(filtered);
-      };
+  const handleSearch = () => {
+    const rides = JSON.parse(localStorage.getItem('rides') || '[]');
+    const filtered = rides.filter(
+      (ride) =>
+        ride.departure.toLowerCase().includes(filters.departure.toLowerCase()) &&
+        ride.destination.toLowerCase().includes(filters.destination.toLowerCase())
+    );
+    setResults(filtered);
+  };
 
-      const handleReserve = (ride) => {
-            if (!user) return alert("Vous devez être connecté pour réserver.");
-            const reservations = JSON.parse(localStorage.getItem("reservations") || "[]");
-            reservations.push({ ...ride, reservedBy: user.email });
-            localStorage.setItem("reservations", JSON.stringify(reservations));
-            alert("Réservation effectuée avec succès.");
-      };
+  const goToReservation = (trip) => {
+    navigate('/reservation', { state: { trip } });
+  };
 
-      return (
-            <div className={styles.container}>
-            <h2 className={styles.title}>Rechercher un trajet</h2>
-            <input className={styles.input} name="departure" placeholder="Départ" onChange={handleChange} />
-            <input className={styles.input} name="destination" placeholder="Destination" onChange={handleChange} />
-            <button className={styles.button} onClick={handleSearch}>Rechercher</button>
-      
-            <div className={styles.results}>
-                  {results.map((ride, index) => (
-                  <div className={styles.rideCard} key={index}>
-                        <h4>{ride.departure} ➞ {ride.destination}</h4>
-                        <p>Date : {ride.date}</p>
-                        <p>Prix : {ride.price} FCFA</p>
-                        <p>Conducteur : {ride.createdBy}</p>
-                        <button className={styles.button} onClick={() => handleReserve(ride)}>Réserver</button>
-                  </div>
-                  ))}
-                  </div>
-            </div>
-      );
+  return (
+    <div className={styles.pageWrapper}>
+      <div className={styles.container}>
+        <h2 className={tripStyles.title}>Rechercher un trajet</h2>
+        <div className={styles.filters}>
+          <input
+            className={styles.input}
+            name="departure"
+            placeholder="Départ"
+            onChange={handleChange}
+          />
+          <input
+            className={styles.input}
+            name="destination"
+            placeholder="Destination"
+            onChange={handleChange}
+          />
+          <button className={styles.button} onClick={handleSearch}>
+            Rechercher
+          </button>
+        </div>
+
+        <div className={tripStyles.tripList}>
+          {results.length === 0 ? (
+            <p>Aucun trajet trouvé.</p>
+          ) : (
+            results.map((trip, index) => (
+                  <TripCard key={index} trip={trip} onReserve={goToReservation} />
+                ))
+          )}
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
 };
 
 export default SearchRide;

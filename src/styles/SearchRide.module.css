@@ -1,31 +1,41 @@
-.container {
+.pageWrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #f8f8f8;
+    }
+    
+    .container {
       padding: 20px;
+      flex: 1;
     }
-    .title {
-      font-size: 24px;
-      margin-bottom: 10px;
+    
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
     }
+    
     .input {
-      margin: 10px;
+      flex: 1;
       padding: 10px;
-      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      min-width: 150px;
     }
+    
     .button {
-      margin: 10px;
       padding: 10px 20px;
-      background-color: #2196f3;
+      background-color: #372a9b;
       color: white;
       border: none;
-      cursor: pointer;
       border-radius: 4px;
+      cursor: pointer;
     }
-    .results {
-      margin-top: 20px;
+    
+    .button:hover {
+      background-color: #2a217a;
     }
-    .rideCard {
-      border: 1px solid #ccc;
-      padding: 15px;
-      margin: 10px 0;
-      border-radius: 6px;
-      background-color: #f9f9f9;
-    }
+    

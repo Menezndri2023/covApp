@@ -3,9 +3,12 @@
       border: 1px solid #ccc;
       border-radius: 8px;
       background-color: #fff;
+      height: 500px;
+      width: 100%
     }
     .mapPlaceholder {
-      height: 200px;
+      height: 100%;
+      width: 100%;
       background-color: #ddd;
       display: flex;
       align-items: center;

@@ -1,13 +1,113 @@
-.container {
-      padding: 30px;
+.page {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 600px;
+      margin: 100px auto 40px;
+      padding: 2rem;
+      background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .title {
+      text-align: center;
+      font-size: 2rem;
+      color: #2c3e50;
+      margin-bottom: 25px;
+    }
+    
+    .profileCard {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.03);
       text-align: center;
     }
-    .button {
-      margin-top: 15px;
+    
+    .profileCard img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #ddd;
+      margin-bottom: 15px;
+    }
+    
+    .profileCard p {
+      margin: 10px 0;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ddd;
+      margin-bottom: 15px;
+    }
+    
+    
+    .actions {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .editButton,
+    .logoutButton {
       padding: 10px 20px;
-      background-color: #d32f2f;
-      color: white;
       border: none;
-      border-radius: 4px;
+      border-radius: 12px;
       cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+      min-width: 120px;
+    }
+    
+    .editButton {
+      background-color: #4CAF50;
+      color: white;
+    }
+    
+    .logoutButton {
+      background-color: #f44336;
+      color: white;
+    }
+    
+    .editButton:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+    
+    .logoutButton:hover {
+      background-color: #d32f2f;
+      transform: scale(1.05);
+    }
+    
+    .message {
+      text-align: center;
+      color: #777;
+      font-size: 1.1rem;
     }

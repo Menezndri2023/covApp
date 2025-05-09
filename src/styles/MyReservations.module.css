@@ -12,3 +12,27 @@
       border-radius: 6px;
       background-color: #e0f7fa;
     }
+    .buttonGroup {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+    
+    .editBtn {
+      background-color: #ffc107;
+      border: none;
+      padding: 8px 12px;
+      color: #000;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    
+    .deleteBtn {
+      background-color: #dc3545;
+      border: none;
+      padding: 8px 12px;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    

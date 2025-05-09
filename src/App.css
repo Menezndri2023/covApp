@@ -1,3 +1,14 @@
+.logoutButton {
+  background-color: transparent;
+  border: none;
+  color: white;
+  margin-left: 10px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+
 .App {
   text-align: center;
 }
